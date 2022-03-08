@@ -1,0 +1,6 @@
+.MonthlyStats__StatsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  min-height: 500px;
+  align-content: center;
+}

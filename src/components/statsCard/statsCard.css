@@ -1,5 +1,32 @@
 .StatsCard {
-  background-color: red;
+  /* background-color: red; */
   padding: 20px;
   margin: 20px 20px;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.StatsCard h2 {
+  padding-bottom: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.StatsCard h2:hover {
+  color: black;
+}
+
+.StatsCard__details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.StatsCard h2 {
+  color: #fc4c02;
 }

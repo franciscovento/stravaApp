@@ -22,10 +22,11 @@ const MonthlyStats = () => {
 
   return (  
     <div className="MonthlyStats">
-      <h2>Montlhy Stats</h2>
+      <div className='MonthlyStats__StatsContainer'>
       {lastActivities !== undefined ? <StatsCard title={months.currentDate} distance={lastActivities.currentMonth.distance} time={lastActivities.currentMonth.time} elevation_gain={lastActivities.currentMonth.elevation_gain} /> : "" }
       {lastActivities !== undefined ? <StatsCard title={months.pastDate} distance={lastActivities.pastMonth.distance} time={lastActivities.pastMonth.time} elevation_gain={lastActivities.pastMonth.elevation_gain} /> : "" }
       {lastActivities !== undefined ? <StatsCard title={months.twoPastDate} distance={lastActivities.twoPastMonth.distance} time={lastActivities.twoPastMonth.time} elevation_gain={lastActivities.twoPastMonth.elevation_gain} /> : "" }
+      </div>
     </div>
   )
 }
