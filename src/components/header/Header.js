@@ -3,13 +3,21 @@ import stravaLogo from '../../assets/stravaLogo.png'
 import imgProfile from '../../assets/man.png'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import SideBar from '../sideBar/SideBar'
+import { useState } from 'react'
 
 
 
 
 const Header = () => {
 
-const  {userinfo}  = useSelector( state => state.userReducer)
+const  { userinfo }  = useSelector( state => state.userReducer)
+const [ open, setOpen ] = useState(false)
+
+
+const handleClick = () =>{
+  setOpen(prev => !prev)
+}
 
   return (
     <header>
@@ -27,7 +35,7 @@ const  {userinfo}  = useSelector( state => state.userReducer)
           </li>
         </ul>  
       </nav>
-      <div className="mainHeader__profileImg">
+      <div onClick={handleClick} className="mainHeader__profileImg">
         <img src={imgProfile} alt="" />
       </div>
      </div>
@@ -35,6 +43,7 @@ const  {userinfo}  = useSelector( state => state.userReducer)
         <h2 className="headerBottom__name">{userinfo && userinfo.username}</h2>
         <p>{userinfo && userinfo.city}</p>
      </div>
+     { open ? <SideBar handleClick={handleClick}/> : ""}
     </header>
   )
 }
