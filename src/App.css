@@ -10,3 +10,15 @@
   margin: auto;
   padding: 10px;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #cccccc;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #fd6f3f;
+  border-radius: 0px;
+}
