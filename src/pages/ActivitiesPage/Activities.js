@@ -4,6 +4,7 @@ import './activitiesPage.css'
 
 // redux
 import {  useSelector } from 'react-redux'
+import LoaderComponent from '../../components/loading/Loader';
 
 const Activities = ({title="All Activities"}) => {
 
@@ -14,6 +15,7 @@ const Activities = ({title="All Activities"}) => {
     <div className="ActivitiesPage">
         
         <h2>{title}</h2>
+        <div className='ActivitiesPage__container'>
         { data.length > 0 ? data.map(x => {
           return (
             <Card 
@@ -24,7 +26,8 @@ const Activities = ({title="All Activities"}) => {
             elevation={x.total_elevation_gain}
             date={new Date(x.start_date).toUTCString().split(' ', 4).join(' ')}
             />) 
-        }) : "Loading..."}
+        }) : <LoaderComponent />}
+        </div>
     
     </div>
   )
